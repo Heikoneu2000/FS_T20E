@@ -5,3 +5,5 @@
 *.nav
 *.toc
 *.synctex.gz
+*.bcf
+*.run.xml
