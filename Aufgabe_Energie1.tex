@@ -1,0 +1,54 @@
+\documentclass{beamer}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace} 
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+\usepackage{eurosym}
+\sisetup{locale = DE}
+\sisetup{per-mode=fraction}
+% Lade Beamer Stile
+\usepackage{beamerthemesplit}
+\usetheme{Rochester}
+\usecolortheme{crane}
+\setbeamercolor{bgcolor}{fg=black,bg=green!15!white}
+\title{Beispielaufgabe Volumenausdehnung fester Körper}
+\subtitle{Volumenausdehnung}
+\author{Heiko Schröter}
+\date{\today}
+
+\setbeamertemplate{enumerate item}{\alph{enumi})}
+\newtheorem{satz}{Satz}
+
+\begin{document}
+
+%\frame{\titlepage}
+
+\frame
+{
+  \frametitle{Aufgabe}
+Ein vom Dach fallender Dachziegel (m=\SI{1}{\kilo\gram}) schlägt mit einer Geschwindigkeit von \SI{20}{\meter\per\second} auf dem Boden auf.\\
+\begin{enumerate}
+\item Welche kinetische Energie hat er unmittelbar vor dem Aufschlag?
+\item Aus welcher Höhe fiel der Dachziegel ($g\approx\SI{10}{\meter\per\square\second}$)?
+\end{enumerate}
+}
+\frame
+{
+\frametitle{Lösung}
+\begin{enumerate}
+\item 
+\begin{align*}
+W_1=W_{kin}=\frac{1}{2}\cdot m\cdot v^{2}=\frac{1}{2}\cdot \SI{1}{\kilo\gram}\cdot \left( \SI{20}{\meter\per\second}\right)^{2}=\SI{200}{\joule}
+\end{align*}
+\item
+\begin{align*}
+W_2&=W_{pot};\quad W_1=W_2\quad\Rightarrow\quad W_{kin}=W_{pot}\quad\Rightarrow\\
+&\Rightarrow \frac{1}{2}\cdot m\cdot v^{2}=m\cdot g\cdot \Delta h\quad \Rightarrow\\
+&\Rightarrow \Delta h=\dfrac{v^{2}}{2g}\approx \dfrac{\left( \SI{20}{\meter\per\second}\right)^{2}}{2\cdot \SI{10}{\meter\per\square\second}}=\SI{20}{\meter}
+\end{align*}
+\end{enumerate}
+}
+\end{document}

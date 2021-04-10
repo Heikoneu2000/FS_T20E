@@ -1,0 +1,53 @@
+\documentclass{beamer}
+%\documentclass{article}
+%\usepackage[noxcolor]{beamerarticle}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\sisetup{locale = DE,
+per-mode=fraction}
+% Lade Beamer Stile
+\usepackage{beamerthemesplit}
+\usepackage{tcolorbox}
+\usetheme{Rochester}
+\usecolortheme{crane}
+
+
+\title{3. Unterrichtseinheit zur Dynamik}
+\subtitle{Energieerhaltungssatz}
+\author{Heiko Schröter}
+\date{\today}
+
+\setbeamertemplate{enumerate item}{\alph{enumi})}
+
+\begin{document}
+
+\frame
+{
+  \begin{tikzpicture}
+  \begin{scope}[yscale=50, xscale=5]
+    %\draw[very thin,color=gray,xstep=0.1, ystep=0.01] (0,0) grid (1.05,0.095);
+    \draw[->] (0,0) -- (1.1,0) node[right] {$t$};
+    \draw[->] (0,0) -- (0,0.1) node[above] {$h$};
+    \draw[domain=0:0.298] plot ({\x},{-(\x-0.298)*(\x+0.298)});
+    \node[left] () at (0,0.088804) {$h_0=\SI{17,2}{\centi\meter}$};
+    \draw[domain=0.298:0.524] plot ({\x},{-4*(\x-0.298)*(\x-0.524)});
+    \draw[domain=0.524:0.707] plot ({\x},{-4*(\x-0.707)*(\x-0.524)});
+    \draw[domain=0.707:0.859] plot ({\x},{-4*(\x-0.707)*(\x-0.859)});
+    \draw[domain=0.859:0.988] plot ({\x},{-4*(\x-0.988)*(\x-0.859)});
+    %\draw (0,0.088804) -- (,0.088804);
+    \draw[dotted, very thin] (0,2*0.025538) node[left] {$h_1=\SI{10,9}{\centi\meter}$} -- (0.411,2*0.025538);
+    \draw[dotted, very thin] (0,2*0.016745) node[left] {$h_2=\SI{6,2}{\centi\meter}$} -- (0.6155,2*0.016745);
+    \draw[dotted, very thin] (0,2*0.011552) node[left] {$h_3=\SI{4,1}{\centi\meter}$} -- (0.783,2*0.011552);
+    \draw[dotted, very thin] (0,2*0.008321) node[left] {$h_4=\SI{2,8}{\centi\meter}$} -- (0.9235,2*0.008321);
+    \node[below] () at (0.149,-0.002) {$\Delta t_1$};
+    \node[below] () at (0.411,-0.002) {$\Delta t_2$};
+    \node[below] () at (0.6155,-0.002) {$\Delta t_3$};
+    \node[below] () at (0.783,-0.002) {$\cdots$};
+  \end{scope}
+  \end{tikzpicture}}
+\end{document}
