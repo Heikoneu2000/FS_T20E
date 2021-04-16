@@ -5,26 +5,16 @@
 \usetikzlibrary{arrows}
 \pagestyle{empty}
 \begin{document}
-\definecolor{qqqqff}{rgb}{0,0,1}
 \definecolor{qqwuqq}{rgb}{0,0.4,0}
-\definecolor{ffqqqq}{rgb}{1,0,0}
 \definecolor{zzttqq}{rgb}{0.6,0.2,0}
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
 \clip(-2.429297546295853,-2.4682551350228428) rectangle (9.517648452070247,5.739656072501274);
-\fill[line width=2pt,color=zzttqq,fill=zzttqq,fill opacity=0.45] (0,0) -- (8,3) -- (8,0) -- cycle;
-\fill[line width=0.8pt,color=qqqqff,fill=qqqqff,fill opacity=0.4] (6.062270683686324,2.2733515063823715) -- (5.680115356913849,3.2924323777756372) -- (6.699196228307114,3.6745877045481112) -- (7.081351555079589,2.655506833154846) -- cycle;
-\fill[line width=0.8pt,color=qqqqff,fill=qqqqff,fill opacity=0.4] (0.6369255446207908,1.4012361981657402) -- (1.0190808713932653,0.3821553267724745) -- (0,0) -- (-0.3821553267724746,1.0190808713932655) -- cycle;
-\draw [->,line width=2pt,color=ffqqqq] (6.38073345599672,2.9739696054652414) -- (6.38073345599672,0.40908459606570036);
-\draw [->,line width=2pt,color=qqwuqq] (6.38073345599672,2.9739696054652414) -- (5.537483589892761,2.657750905676257);
-\draw [->,line width=2pt,color=qqqqff] (6.38073345599672,2.9739696054652414) -- (7.223983322100676,0.725303295854685);
-\draw [->,line width=2pt,color=zzttqq] (6.38073345599672,2.9739696054652414) -- (7.2239833221006835,3.290188305254228);
-\begin{scriptsize}
-\draw[color=ffqqqq] (6.497226954363029,1.8602671228438428) node {$F_G$};
-\draw[color=qqwuqq] (6.048093646153776,2.9381870625460524) node {$F_H$};
-\draw[color=qqqqff] (6.923903597161818,2.039920446127544) node {$F_N$};
-\draw[color=qqqqff] (6.340030296489791,3.2750370437029925) node {m};
-\draw[color=zzttqq] (6.8565336009304305,3.342407039934381) node {$F_R$};
-\draw[color=qqqqff] (0.3553289646015089,0.8384888466677899) node {m};
-\end{scriptsize}
+\fill[line width=1pt, color=black, fill=green, fill opacity=0.25] (0,0) -- (8,3) -- (8,0) -- cycle;
+\fill[line width=0.8pt,color=blue,fill=blue,fill opacity=0.4] (6.062270683686324,2.2733515063823715)  -- (5.680115356913849,3.2924323777756372) --  node[blue, midway, above] {m}(6.699196228307114,3.6745877045481112) -- (7.081351555079589,2.655506833154846) -- cycle ;
+\fill[line width=0.8pt,color=blue,fill=blue,fill opacity=0.4] (0.6369255446207908,1.4012361981657402)  -- (1.0190808713932653,0.3821553267724745) -- (0,0) -- (-0.3821553267724746,1.0190808713932655) -- cycle node[blue, midway, above] {m};
+\draw [->,>=latex, line width=0.5pt,color=red] (6.38073345599672,2.9739696054652414) -- (6.38073345599672,0.40908459606570036) node[midway, left] {$F_G$};
+\draw [->,>=latex, line width=0.5pt,color=qqwuqq] (6.38073345599672,2.9739696054652414) -- (5.537483589892761,2.657750905676257) node[midway, above] {$F_H$};
+\draw [->,>=latex, line width=0.5pt,color=blue] (6.38073345599672,2.9739696054652414) -- (7.223983322100676,0.725303295854685) node[midway, right] {$F_N$};
+\draw [->,>=latex, line width=0.5pt,color=zzttqq] (6.38073345599672,2.9739696054652414) -- (7.2239833221006835,3.290188305254228) node[midway, above] {$F_R$};
 \end{tikzpicture}
 \end{document}
