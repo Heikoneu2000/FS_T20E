@@ -1,53 +1,74 @@
-%\documentclass{beamer}
-\documentclass[12pt,oneside]{scrartcl}
-%\documentclass{article}
-\usepackage[noxcolor]{beamerarticle}
-\usepackage[ngerman]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{siunitx}
-\usepackage{graphicx}
-\usepackage{pgfplots}
-\sisetup{locale = DE,
-per-mode=fraction}
-% Lade Beamer Stile
-\usepackage{beamerthemesplit}
-\usepackage{tcolorbox}
-\usetheme{Rochester}
-\usecolortheme{crane}
-\usepackage[a4paper, left=2.5cm, right=2cm, top=5.5cm, bottom=2.5cm]{geometry}
-\usepackage{biblatex}
-\usepackage{xltabular}
-\addbibresource{Schallgeschwindigkeit.bib}
-\usepackage{scrlayer-scrpage}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-\DeclareNewLayer[%
-  background,% Hintergrundebene
-  width=\textwidth,% Größe und Position des Textbereichs
-  hoffset=2.5cm,
-  voffset=2.5cm,
-  align=tl,
-  contents={%
-  \sffamily
-    \setlength{\fboxsep}{2mm}% Abstand Box Text
-    \setlength{\fboxrule}{.5mm}% Dicke Linie
-    % vertikale Position korrigieren    
-    \vskip-\fboxsep\vskip-\fboxrule\vskip-\baselineskip
-    % horizontale Position korrigieren
-    \hspace{-\fboxsep}\hspace{-\fboxrule}%
-    \begin{tabularx}{\textwidth}{|>{\bfseries\Large}C{7cm}|X|X|}                                                       
-\hline
-\vspace{0em}\includegraphics[scale=0.3]{logo2.png} & Name: & Datum: \\
-\hline
 
-\end{tabularx}
-    %\makebox[\layerwidth][l]{%
-    %  \fbox{\rule{0pt}{\layerheight}\rule{\layerwidth}{0pt}}% Rahmen
-    %}%
-  }
-]{frame}
-\AddLayersToPageStyle{@everystyle@}{frame}
+%\newcommand*{\SCRIPT}{}
+\newcommand*{\BEAMER}{}
+
+\ifdefined\SCRIPT
+	\documentclass{article}
+	\usepackage[a4paper, left=2.5cm, right=2cm, top=5.5cm, bottom=2.5cm]{geometry}
+	\usepackage[noxcolor]{beamerarticle}
+	\usepackage[ngerman]{babel}
+	\usepackage[utf8]{inputenc}
+	\usepackage{amsmath}
+	\usepackage{amsthm}
+	\usepackage{graphicx}
+	\usepackage{pgfplots}
+	\usepackage{tcolorbox}
+	\usepackage{siunitx}
+	\sisetup{locale = DE,
+	per-mode=fraction}
+	\usepackage{biblatex}
+	\usepackage{xltabular}
+	\addbibresource{Schallgeschwindigkeit.bib}
+	\usepackage{scrlayer-scrpage}
+	\pagestyle{scrheadings}
+	\clearpairofpagestyles
+	\ofoot{Seite \pagemark}
+	\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+	\DeclareNewLayer[%
+	  background,% Hintergrundebene
+	  width=\textwidth,% Größe und Position des Textbereichs
+	  hoffset=2.5cm,
+	  voffset=2.5cm,
+	  align=tl,
+	  contents={%
+	  \sffamily
+	    \setlength{\fboxsep}{2mm}% Abstand Box Text
+	    \setlength{\fboxrule}{.5mm}% Dicke Linie
+	    % vertikale Position korrigieren    
+	    \vskip-\fboxsep\vskip-\fboxrule\vskip-\baselineskip
+	    % horizontale Position korrigieren
+	    \hspace{-\fboxsep}\hspace{-\fboxrule}%
+	    \begin{tabularx}{\textwidth}{|>{\bfseries\Large}C{7cm}|X|X|}                                                       
+	\hline
+	\vspace{0em}\includegraphics[scale=0.3]{logo2.png} & Name: & Datum: \\
+	\hline
+	
+	\end{tabularx}
+	    %\makebox[\layerwidth][l]{%
+	    %  \fbox{\rule{0pt}{\layerheight}\rule{\layerwidth}{0pt}}% Rahmen
+	    %}%
+	  }
+	]{frame}
+	\AddLayersToPageStyle{@everystyle@}{frame}
+\fi
+
+\ifdefined\BEAMER
+	\documentclass{beamer}
+	\usepackage[ngerman]{babel}
+	\usepackage[utf8]{inputenc}
+	\usepackage{amsmath}
+	\usepackage{amsthm}
+	\usepackage{graphicx}
+	\usepackage{pgfplots}
+	\usepackage{tcolorbox}
+	\usepackage{siunitx}
+	\sisetup{locale = DE,
+	per-mode=fraction}
+	% Lade Beamer Stile
+	\usetheme{Rochester}
+	\usecolortheme{crane}
+	\usepackage{beamerthemesplit}
+\fi
 
 \title{3. Unterrichtseinheit zur Dynamik}
 \subtitle{Energieerhaltungssatz}
@@ -307,7 +328,7 @@ Die mechanische Leistung ist gleich dem Quotienten aus der mechanischen Arbeit u
 SI-Einheit der Leistung $P$:
 $[P]=\SI{1}{\newton\meter\per\second}=\SI{1}{\joule\per\second}=\SI{1}{\kilo\gram\square\meter\per\cubic\second}=\SI{1}{\watt}$
       \begin{figure}
-	  \includegraphics[width=0.8\textwidth]{Leistung}
+	  \includegraphics[width=0.6\textwidth]{Leistung}
 	  \vspace{-3mm}
 	  \caption{Leistung an der schiefen Ebene}
    \end{figure}
