@@ -230,20 +230,27 @@ Beim Stoß ändert sich der Gesamtimpuls, d.h. die Summe aller Einzelimpulse in 
 
 \frame
 {
+  \frametitle{Der unelastische Stoß}
+  Beim unelastischen, d.h. plastischen Stoß verformt sich mindestens einer der beiden Körper vollkommen plastisch.
+  \begin{block}{Geschwindigkeit beider Massen nach einem unelastischen Stoß}
+	\begin{align*}
+	v=\dfrac{m_1\cdot v_1+m_2\cdot v_2}{m_1+m_2}
+	\end{align*}
+  \end{block}
+}
+
+\frame
+{
 \uncover<1->
 {
-  \frametitle{Beispielaufgabe Stoß}
-Mit welcher Geschwindigkeit schlägt die Kugel beim ersten Aufschlag auf dem Boden auf, wenn die Kugel aus einer maximalen Höhe von \SI{17,2}{\centi\meter} fällt? Welche Geschwindigkeit hat sie \SI{10}{\centi\meter} über dem Boden?\\
+  \frametitle{Beispielaufgabe unelastischer Stoß}
+Ein Körper mit der Masse $m_1=\SI{10}{\kilogram}$ bewegt sich mit $v_1=\SI{10}{\meter\per\second}$ auf einen Körper mit der Masse $m_2=\SI{100}{\kilogram}$, der sich in Ruhe befindet, zu. Wie groß ist die gemeinsame Endgeschwindigkeit $v$, wenn sich die Masse $m_1$ vollkommen plastisch verhält?\\
 }
 \uncover<2->
 {
 \textbf{Lösung:}	
 	\begin{align*}
-	E_{pot}&=E_{kin}\quad\Rightarrow\quad m\cdot g\cdot h=\frac{1}{2}mv^2\\
-	v&=\sqrt{2\cdot g\cdot h}=\sqrt{2\cdot \SI{9,81}{\meter\per\square\second}\cdot \SI{0,172}{\meter}}\\
-	&=\SI{1,84}{\meter\per\second}=\SI{6,61}{\kilo\meter\per\hour}\\
-	v_x&=\sqrt{2\cdot g\cdot\Delta h}=\sqrt{2\cdot \SI{9,81}{\meter\per\square\second}\cdot\SI{0,072}{\meter}}\\
-	&=\SI{1,19}{\meter\per\second}=\SI{4,28}{\kilo\meter\per\hour}
+	v&=\dfrac{m_1\cdot v_1+m_2\cdot v_2}{m_1+m_2}=\dfrac{\SI{10}{\kilogram}\cdot \SI{10}{\meter\per\second}+\SI{100}{\kilogram}\cdot 0}{\SI{10}{\kilogram}+\SI{100}{\kilogram}}=\dfrac{\SI{100}{\kilogram\meter\per\second}}{\SI{110}{\kilogram}}\\&=\SI{0,909}{\meter\per\second}
 	\end{align*}
 }
 }
