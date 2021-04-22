@@ -243,7 +243,8 @@ Beim Stoß ändert sich der Gesamtimpuls, d.h. die Summe aller Einzelimpulse in 
 \uncover<1->
 {
   \frametitle{Beispielaufgabe unelastischer Stoß}
-Ein Körper mit der Masse $m_1=\SI{10}{\kilogram}$ bewegt sich mit $v_1=\SI{10}{\meter\per\second}$ auf einen Körper mit der Masse $m_2=\SI{100}{\kilogram}$, der sich in Ruhe befindet, zu. Wie groß ist die gemeinsame Endgeschwindigkeit $v$, wenn sich die Masse $m_1$ vollkommen plastisch verhält?\\
+Ein Körper mit der Masse $m_1=\SI{10}{\kilogram}$ bewegt sich mit $v_1=\SI{10}{\meter\per\second}$ auf einen Körper mit der Masse $m_2=\SI{100}{\kilogram}$, der sich in Ruhe befindet, zu. Wie groß ist die gemeinsame Endgeschwindigkeit $v$, wenn sich die Masse $m_1$ vollkommen plastisch verhält?
+\includegraphics[width=0.3\textwidth]{unelastischer_Stoß.png}\\
 }
 \uncover<2->
 {
@@ -256,12 +257,24 @@ Ein Körper mit der Masse $m_1=\SI{10}{\kilogram}$ bewegt sich mit $v_1=\SI{10}{
 
 \frame
 {
-  \frametitle{Beispielaufgabe Feder}
-Eine Feder mit der Federkonstante $D=\SI{20}{\newton\centi\meter}$ ist um \SI{4}{\centi\meter} gestaucht.
+  \frametitle{Der elastische Stoß}
+  Beim elastischen Stoß unterscheidet man den ersten Teil des Stoßes vom zweiten Teil des Stoßes.
+  \begin{block}{Geschwindigkeit beider Massen nach der ersten Stoßhälfte}
+	\begin{align*}
+	\textbf{gemeinsame Geschwindigkeit: }v&=\dfrac{m_1\cdot v_1+m_2\cdot v_2}{m_1+m_2}\\
+	\textbf{Endgeschwindigkeit }m_1:v_{1e}&=2\cdot\dfrac{m_1\cdot v_1+m_2\cdot v_2}{m_1+m_2}-v_1\\
+	\textbf{Endgeschwindigkeit }m_2:v_{2e}&=2\cdot\dfrac{m_1\cdot v_1+m_2\cdot v_2}{m_1+m_2}-v_2\\
+	\end{align*}
+  \end{block}
+}
+
+\frame
+{
+  \frametitle{Beispielaufgabe elastischer Stoß}
+Ein Körper mit der Masse $m_1=\SI{6}{\kilogram}$ bewegt sich mit $v_1=\SI{10}{\meter\per\second}$ zentrisch auf einen Körper mit der Masse $m_2=\SI{18}{\kilogram}$, der sich mit $v_2=\SI{2}{\meter\per\second}$ in die gleiche Richtung wie der Körper mit der Masse $m_1$ bewegt, zu. Berechnen Sie
 \begin{enumerate}
-\item Wie viel Energie ist in der Feder gespeichert? Wie hoch könnte man einen Liter Wasser mit dieser Energie heben?
-\item Die Feder wird benutzt, um eine Metallkugel der Masse $m=\SI{30}{\gram}$ senkrecht nach oben zu schießen. Welche Höhe erreicht die Kugel dabei?
-\item Die Kugel fällt nun wieder nach unten. Mit welcher Geschwindigkeit schlägt sie wieder auf dem Boden auf? Welche Geschwindigkeit hat sie \SI{5}{\meter} über dem Boden?
+\item Die Geschwindigkeit $v$ beider Körper nach der ersten Hälfte des Stoßes.
+\item die Endgeschwindigkeiten beider Körper am Ende eines vollkommen elastischen Stoßes.
 \end{enumerate}
 }
 \frame[allowframebreaks]
@@ -270,25 +283,18 @@ Eine Feder mit der Federkonstante $D=\SI{20}{\newton\centi\meter}$ ist um \SI{4}
 \begin{enumerate}
 \item 
 	\begin{align*}
-	E_{sp}&=\frac{1}{2}\cdot D \cdot s^2=\frac{1}{2}\cdot \SI{20}{\newton\centi\meter} \cdot (\SI{4}{\centi\meter})^2=\SI{160}{\newton\centi\meter}=\SI{1,6}{\newton\meter}\\
-	E_{pot}&=m\cdot g\cdot h=\SI{1,6}{\newton\meter}=\SI{1}{\kilo\gram}\cdot\SI{9,81}{\meter\per\square\second}\cdot h\\
-	\Rightarrow h&=\dfrac{\SI{1,6}{\newton\meter}}{\SI{1}{\kilo\gram}\cdot\SI{9,81}{\meter\per\square\second}}=\SI{0,163}{\meter}
+	v&=\dfrac{m_1\cdot v_1+m_2\cdot v_2}{m_1+m_2}=\dfrac{\SI{6}{\kilogram}\cdot \SI{10}{\meter\per\second}+\SI{18}{\kilogram}\cdot \SI{2}{\meter\per\second}}{\SI{6}{\kilogram}+\SI{18}{\kilogram}}=\dfrac{\SI{96}{\kilogram\meter\per\second}}{\SI{24}{\kilogram}}\\
+	&=\SI{4}{\meter\per\second}
 	\end{align*}
-	In der Feder sind \SI{1,6}{\newton\meter} gespeichert. Mit dieser Energie könnte man einen Liter Wasser um \SI{16,3}{\centi\meter} anheben.
 \item 
 	\begin{align*}
-	E_{sp}&=E_{pot}\Rightarrow \SI{1,6}{\newton\meter}=m\cdot g\cdot h\Rightarrow \\
-	h&=\dfrac{\SI{1,6}{\newton\meter}}{\SI{0,03}{\kilo\gram}\cdot\SI{9,81}{\meter\per\square\second}}=\SI{5,44}{\meter}
+	v_{1e}&=2\cdot\dfrac{m_1\cdot v_1+m_2\cdot v_2}{m_1+m_2}-v_1\\
+	&=2\cdot\dfrac{\SI{6}{\kilogram}\cdot \SI{10}{\meter\per\second}+\SI{18}{\kilogram}\cdot \SI{2}{\meter\per\second}}{\SI{6}{\kilogram}+\SI{18}{\kilogram}}-\SI{10}{\meter\per\second}=\SI{8}{\meter\per\second}-\SI{10}{\meter\per\second}\\
+	&=-\SI{2}{\meter\per\second}\\
+		v_{2e}&=2\cdot\dfrac{m_1\cdot v_1+m_2\cdot v_2}{m_1+m_2}-v_2\\
+	&=2\cdot\dfrac{\SI{6}{\kilogram}\cdot \SI{10}{\meter\per\second}+\SI{18}{\kilogram}\cdot \SI{2}{\meter\per\second}}{\SI{6}{\kilogram}+\SI{18}{\kilogram}}-\SI{2}{\meter\per\second}=\SI{8}{\meter\per\second}-\SI{2}{\meter\per\second}\\
+	&=\SI{6}{\meter\per\second}
 	\end{align*}
-	Die Kugel erreicht eine Höhe von \SI{5,44}{\meter}.\newpage
-\item 
-	\begin{align*}
-	E_{pot}&=E_{kin}\Rightarrow m\cdot g\cdot h=\frac{1}{2}\cdot m \cdot v^2\Rightarrow v=\sqrt{2\cdot g\cdot h}\\
-	v&=\sqrt{2\cdot \SI{9,81}{\meter\per\square\second}\cdot \SI{5,44}{\meter}}=\SI{10,3}{\meter\per\second}=\SI{37,2}{\kilo\meter\per\hour}\\
-	v_x&=\sqrt{2\cdot g\cdot \Delta h}=\sqrt{2\cdot \SI{9,81}{\meter\per\square\second}\cdot (\SI{5,44}{\meter}-\SI{5}{\meter})}\\
-	&=\sqrt{2\cdot \SI{9,81}{\meter\per\square\second}\cdot \SI{0,44}{\meter}}=\SI{2,94}{\meter\per\second}=\SI{10,6}{\kilo\meter\per\hour}
-	\end{align*}
-	Die Kugel schlägt mit \SI{37,2}{\kilo\meter\per\hour} auf dem Boden auf, \SI{5}{\meter} über dem Boden hat sie eine Geschwindigkeit von \SI{10,6}{\kilo\meter\per\hour}.
 \end{enumerate}
 }
 
