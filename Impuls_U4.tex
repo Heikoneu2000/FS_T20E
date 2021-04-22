@@ -147,7 +147,7 @@ I=\Delta p&=F\cdot \Delta t=m\cdot v_t - m\cdot v_0
 \frame[allowframebreaks]
 {
   \frametitle{Beispielaufgabe Impulsänderung}
-  An einem Eisenbahnzug mit der Masse $m=\SI{960000}{\kilogram}$ wirkt eine Zugkraft $F_Z=\SI{120}{\kilo\newton}$.Die Gesamte Fahrwiderstandskraft (Reibung und Luftwiderstand) ist $F_F=\SI{47,1}{\kilo\newton}$. Berechnen Sie
+  An einem Eisenbahnzug mit der Masse $m=\SI{960000}{\kilogram}$ wirkt eine Zugkraft $F_Z=\SI{120}{\kilo\newton}$. Die Gesamte Fahrwiderstandskraft (Reibung und Luftwiderstand) ist $F_F=\SI{47,1}{\kilo\newton}$. Berechnen Sie
 \begin{enumerate}
 \item die resultierende Kraft $F_r$,
 \item $v_t$ nach $t=\SI{5}{\minute}$ (horizontale Strecke und $v_0=0$).
@@ -169,11 +169,11 @@ I=\Delta p&=F\cdot \Delta t=m\cdot v_t - m\cdot v_0
 \begin{enumerate}
 \item Das Bild zeigt die zeichnerische Lösung. Danach ist:
 	\begin{align*}
-	F_r=F_Z-F_F=F_Z=\SI{120}{\kilo\newton}-F_F=\SI{47,1}{\kilo\newton}=F_F=\SI{72,9}{\kilo\newton}
+	F_r=F_Z-F_F=\SI{120}{\kilo\newton}-\SI{47,1}{\kilo\newton}=\SI{72,9}{\kilo\newton}
 	\end{align*}
 \item 
 	\begin{align*}
-	F_{r} \cdot t&=m\cdot v_{t}-m\cdot v_{0}.\text{ Mit }v_0=0: F_r\cdot t=m\cdot v_{t}.\\
+	F_{r} \cdot t&=m\cdot v_{t}-m\cdot v_{0} \text{ Mit }v_0=0: F_r\cdot t=m\cdot v_{t}.\\
 	\text{Somit: }v_t&=\dfrac{F_r\cdot t}{m}=\dfrac{\SI{72900}{\kilogram\meter\per\square\second}\cdot (5\cdot 60)\si{\second}}{\SI{960000}{\kilogram}}=\SI{22,78}{\meter\per\second}\\
 	v_t&=\SI{82}{\kilo\meter\per\hour}
 	\end{align*}
@@ -217,11 +217,12 @@ I=\Delta p&=F\cdot \Delta t=m\cdot v_t - m\cdot v_0
   	\begin{align*}
 	F_1&=-F_2\\
 	m_1\cdot a_1&=-m_2\cdot a_2\rightarrow m_1\cdot\dfrac{\Delta v_1}{\Delta t}=-m_2\cdot\dfrac{\Delta v_2}{\Delta t}\\
-	\curvearrowright m_1\cdot\Delta v_1&=m_2\cdot\Delta v_2\rightarrow\dfrac{\Delta v_1}{\Delta v_2}=-\dfrac{m_2}{m_1}\\
+	\curvearrowright m_1\cdot\Delta v_1&=-m_2\cdot\Delta v_2\rightarrow\dfrac{\Delta v_1}{\Delta v_2}=-\dfrac{m_2}{m_1}\\
 	\end{align*}
 	  \begin{block}{Stoß}
 Die Geschwindigkeitsänderungen beim Stoß zweier Massen sind entgegengesetzt gerichtet und verhalten sich umgekehrt proportional zu den Massen.
   \end{block}
+  Dabei ist die Summe aller auf das Körpersystem wirkenden Kräfte Null, d.h., dass der Impulserhaltungssatz angewendet werden kann. Dies bedeutet:
 	  \begin{block}{Impulserhaltungssatz}
 Beim Stoß ändert sich der Gesamtimpuls, d.h. die Summe aller Einzelimpulse in einem System bewegter Körper, nicht.
   \end{block}	
@@ -300,6 +301,34 @@ Ein Körper mit der Masse $m_1=\SI{6}{\kilogram}$ bewegt sich mit $v_1=\SI{10}{\
 
 \frame
 {
+  \frametitle{Beispielaufgabe Impulsänderung}
+  Aus einem Kanonenrohr mit der Länge $\SI{8,3}{\meter}$ fliegt ein Geschoss mit der Masse $m=\SI{42}{\kilogram}$ und der Geschwindigkeit $v=\SI{680}{\meter\per\second}$. Berechnen Sie
+\begin{enumerate}
+\item Die Geschosslaufzeit bei konstanter Beschleunigung im Rohr, 
+\item die wirkende Kraft auf das Geschoss im Rohr.
+\end{enumerate}
+}
+\frame[allowframebreaks]
+{
+\textbf{Lösung:}	
+\begin{enumerate}
+\item
+Es wird eine gleichmäßig beschleunigte Bewegung von $v_0=0$ auf $v_t=\SI{680}{\meter\per\second}$ angenommen. Somit:
+	\begin{align*}
+	s=\dfrac{v_t\cdot t}{2}\rightarrow t&=\dfrac{2\cdot s}{v_t}\\
+	&=\dfrac{2\cdot \SI{8,3}{\meter}}{\SI{680}{\meter\per\second}}=\SI{0,0244}{\second}
+	\end{align*}
+\item 
+	\begin{align*}
+	&F\cdot t=m\cdot \Delta v \quad\text{Somit: }\\
+	&F=\dfrac{m\cdot \Delta v}{t}=\dfrac{\SI{42}{\kilogram}\cdot \SI{680}{\meter\per\second}}{\SI{0,0244}{\second}}\\
+	&F=\SI{1170492}{\newton}=\SI{1170,5}{\kilo\newton}
+	\end{align*}
+\end{enumerate}
+}
+
+\frame
+{
   \frametitle{Überblick über Begriffe der Mechanik}
 \begin{block}{Beschreibung}
 \vspace{0.5cm}
@@ -325,7 +354,7 @@ Unter Energie versteht man gespeicherte Arbeit, d.h. Fähigkeit eines Systems, A
 Die SI-Einheit der Energie $E$ ist:
 $[E]=\SI{1}{\newton\meter}=\SI{1}{\joule}=\SI{1}{\kilo\gram\square\meter\per\square\second}$
       \begin{figure}
-	  \includegraphics[width=0.8\textwidth]{Energie_1}
+	  \includegraphics[width=0.5\textwidth]{Energie_1}
 	  \vspace{-3mm}
 	  \caption{Energie an der schiefen Ebene}
    \end{figure}
@@ -340,7 +369,7 @@ Eine Kraft ist durch ihre Größe (Stärke), ihre Richtung und ihren Angriffspun
 Die SI-Einheit der Kraft $F$ ist:
 $[F]=\SI{1}{\newton}=\SI{1}{\kilo\gram\meter\per\square\second}$
       \begin{figure}
-	  \includegraphics[width=0.8\textwidth]{Kraft}
+	  \includegraphics[width=0.5\textwidth]{Kraft}
 	  \vspace{-3mm}
 	  \caption{Kräfte an der schiefen Ebene}
    \end{figure}
@@ -356,7 +385,7 @@ Arbeit ist das Produkt aus der wirkenden Kraft $F$ und dem zurückgelegten Weg $
 Die SI-Einheit der Arbeit $W$ ist:
 $[W]=\SI{1}{\newton\meter}=\SI{1}{\kilo\gram\square\meter\per\square\second}=\SI{1}{\joule}$
       \begin{figure}
-	  \includegraphics[width=0.8\textwidth]{Arbeit_1}
+	  \includegraphics[width=0.6\textwidth]{Arbeit_1}
 	  \vspace{-3mm}
 	  \caption{Arbeit an der schiefen Ebene}
    \end{figure}
@@ -371,7 +400,7 @@ Die mechanische Leistung ist gleich dem Quotienten aus der mechanischen Arbeit u
 SI-Einheit der Leistung $P$:
 $[P]=\SI{1}{\newton\meter\per\second}=\SI{1}{\joule\per\second}=\SI{1}{\kilo\gram\square\meter\per\cubic\second}=\SI{1}{\watt}$
       \begin{figure}
-	  \includegraphics[width=0.6\textwidth]{Leistung}
+	  \includegraphics[width=0.4\textwidth]{Leistung}
 	  \vspace{-3mm}
 	  \caption{Leistung an der schiefen Ebene}
    \end{figure}
