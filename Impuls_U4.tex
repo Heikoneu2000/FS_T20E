@@ -77,6 +77,7 @@
 \date{\today}
 
 \setbeamertemplate{enumerate item}{\alph{enumi})}
+\newcommand{\Ergebnis}[1]{\underline{\underline{#1}}} 
 
 \begin{document}
 
@@ -169,13 +170,13 @@ I=\Delta p&=F\cdot \Delta t=m\cdot v_t - m\cdot v_0
 \begin{enumerate}
 \item Das Bild zeigt die zeichnerische Lösung. Danach ist:
 	\begin{align*}
-	F_r=F_Z-F_F=\SI{120}{\kilo\newton}-\SI{47,1}{\kilo\newton}=\SI{72,9}{\kilo\newton}
-	\end{align*}
+	F_r=F_Z-F_F=\SI{120}{\kilo\newton}-\SI{47,1}{\kilo\newton}=\Ergebnis{\SI{72,9}{\kilo\newton}}
+	\end{align*}\newpage
 \item 
 	\begin{align*}
 	F_{r} \cdot t&=m\cdot v_{t}-m\cdot v_{0} \text{ Mit }v_0=0: F_r\cdot t=m\cdot v_{t}.\\
 	\text{Somit: }v_t&=\dfrac{F_r\cdot t}{m}=\dfrac{\SI{72900}{\kilogram\meter\per\square\second}\cdot (5\cdot 60)\si{\second}}{\SI{960000}{\kilogram}}=\SI{22,78}{\meter\per\second}\\
-	v_t&=\SI{82}{\kilo\meter\per\hour}
+	v_t&=\Ergebnis{\SI{82}{\kilo\meter\per\hour}}
 	\end{align*}
 \end{enumerate}
 }
@@ -251,7 +252,7 @@ Ein Körper mit der Masse $m_1=\SI{10}{\kilogram}$ bewegt sich mit $v_1=\SI{10}{
 {
 \textbf{Lösung:}	
 	\begin{align*}
-	v&=\dfrac{m_1\cdot v_1+m_2\cdot v_2}{m_1+m_2}=\dfrac{\SI{10}{\kilogram}\cdot \SI{10}{\meter\per\second}+\SI{100}{\kilogram}\cdot 0}{\SI{10}{\kilogram}+\SI{100}{\kilogram}}=\dfrac{\SI{100}{\kilogram\meter\per\second}}{\SI{110}{\kilogram}}\\&=\SI{0,909}{\meter\per\second}
+	v&=\dfrac{m_1\cdot v_1+m_2\cdot v_2}{m_1+m_2}=\dfrac{\SI{10}{\kilogram}\cdot \SI{10}{\meter\per\second}+\SI{100}{\kilogram}\cdot 0}{\SI{10}{\kilogram}+\SI{100}{\kilogram}}=\dfrac{\SI{100}{\kilogram\meter\per\second}}{\SI{110}{\kilogram}}\\&=\Ergebnis{\SI{0,909}{\meter\per\second}}
 	\end{align*}
 }
 }
@@ -285,16 +286,16 @@ Ein Körper mit der Masse $m_1=\SI{6}{\kilogram}$ bewegt sich mit $v_1=\SI{10}{\
 \item 
 	\begin{align*}
 	v&=\dfrac{m_1\cdot v_1+m_2\cdot v_2}{m_1+m_2}=\dfrac{\SI{6}{\kilogram}\cdot \SI{10}{\meter\per\second}+\SI{18}{\kilogram}\cdot \SI{2}{\meter\per\second}}{\SI{6}{\kilogram}+\SI{18}{\kilogram}}=\dfrac{\SI{96}{\kilogram\meter\per\second}}{\SI{24}{\kilogram}}\\
-	&=\SI{4}{\meter\per\second}
+	&=\Ergebnis{\SI{4}{\meter\per\second}}
 	\end{align*}
 \item 
 	\begin{align*}
 	v_{1e}&=2\cdot\dfrac{m_1\cdot v_1+m_2\cdot v_2}{m_1+m_2}-v_1\\
 	&=2\cdot\dfrac{\SI{6}{\kilogram}\cdot \SI{10}{\meter\per\second}+\SI{18}{\kilogram}\cdot \SI{2}{\meter\per\second}}{\SI{6}{\kilogram}+\SI{18}{\kilogram}}-\SI{10}{\meter\per\second}=\SI{8}{\meter\per\second}-\SI{10}{\meter\per\second}\\
-	&=-\SI{2}{\meter\per\second}\\
+	&=\Ergebnis{-\SI{2}{\meter\per\second}}\\
 		v_{2e}&=2\cdot\dfrac{m_1\cdot v_1+m_2\cdot v_2}{m_1+m_2}-v_2\\
 	&=2\cdot\dfrac{\SI{6}{\kilogram}\cdot \SI{10}{\meter\per\second}+\SI{18}{\kilogram}\cdot \SI{2}{\meter\per\second}}{\SI{6}{\kilogram}+\SI{18}{\kilogram}}-\SI{2}{\meter\per\second}=\SI{8}{\meter\per\second}-\SI{2}{\meter\per\second}\\
-	&=\SI{6}{\meter\per\second}
+	&=\Ergebnis{\SI{6}{\meter\per\second}}
 	\end{align*}
 \end{enumerate}
 }
@@ -316,13 +317,13 @@ Ein Körper mit der Masse $m_1=\SI{6}{\kilogram}$ bewegt sich mit $v_1=\SI{10}{\
 Es wird eine gleichmäßig beschleunigte Bewegung von $v_0=0$ auf $v_t=\SI{680}{\meter\per\second}$ angenommen. Somit:
 	\begin{align*}
 	s=\dfrac{v_t\cdot t}{2}\rightarrow t&=\dfrac{2\cdot s}{v_t}\\
-	&=\dfrac{2\cdot \SI{8,3}{\meter}}{\SI{680}{\meter\per\second}}=\SI{0,0244}{\second}
+	&=\dfrac{2\cdot \SI{8,3}{\meter}}{\SI{680}{\meter\per\second}}=\Ergebnis{\SI{0,0244}{\second}}
 	\end{align*}
 \item 
 	\begin{align*}
 	&F\cdot t=m\cdot \Delta v \quad\text{Somit: }\\
 	&F=\dfrac{m\cdot \Delta v}{t}=\dfrac{\SI{42}{\kilogram}\cdot \SI{680}{\meter\per\second}}{\SI{0,0244}{\second}}\\
-	&F=\SI{1170492}{\newton}=\SI{1170,5}{\kilo\newton}
+	&F=\SI{1170492}{\newton}=\Ergebnis{\SI{1170,5}{\kilo\newton}}
 	\end{align*}
 \end{enumerate}
 }
