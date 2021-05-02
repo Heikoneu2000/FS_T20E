@@ -429,10 +429,10 @@ Ein "Feld" nennt man einen Bereich im Raum, in dem auf einen Körper eine Kraft 
 \end{block}
       \begin{figure}
 <<<<<<< HEAD
-	  \includegraphics[width=0.81\textwidth]{Feld}
+	  \includegraphics[width=0.8\textwidth]{Feld}
 =======
 	  \includegraphics[width=0.79\textwidth]{Feld}
->>>>>>> refs/remotes/origin/main
+>>>>>>> 7a775a42d8dcbba0339e96a6bdd50c05644be59a
 	  \vspace{-3mm}
 	  \caption{Gravitationsfeld an der schiefen Ebene}
    \end{figure}
