@@ -1,0 +1,201 @@
+%\newcommand*{\SCRIPT}{}
+\newcommand*{\BEAMER}{}
+
+\ifdefined\SCRIPT
+	\documentclass{article}
+	\usepackage[a4paper, left=2.5cm, right=2cm, top=5.5cm, bottom=2.5cm]{geometry}
+	\usepackage[noxcolor]{beamerarticle}
+	\usepackage[ngerman]{babel}
+	\usepackage[utf8]{inputenc}
+	\usepackage{amsmath}
+	\usepackage{amsthm}
+	\usepackage{graphicx}
+	\usepackage{pgfplots}
+	\usepackage{pgfplotstable}
+	\usepackage{tcolorbox}
+	\usepackage{siunitx}
+	\sisetup{locale = DE,
+	per-mode=fraction}
+	\usetikzlibrary{arrows,patterns}
+	\usepackage{biblatex}
+	\usepackage{xltabular}
+	\addbibresource{Schallgeschwindigkeit.bib}
+	\usepackage{scrlayer-scrpage}
+	\pagestyle{scrheadings}
+	\clearpairofpagestyles
+	\ofoot{Seite \pagemark}
+	\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+	\DeclareNewLayer[%
+	  background,% Hintergrundebene
+	  width=\textwidth,% Größe und Position des Textbereichs
+	  hoffset=2.5cm,
+	  voffset=2.5cm,
+	  align=tl,
+	  contents={%
+	  \sffamily
+	    \setlength{\fboxsep}{2mm}% Abstand Box Text
+	    \setlength{\fboxrule}{.5mm}% Dicke Linie
+	    % vertikale Position korrigieren    
+	    \vskip-\fboxsep\vskip-\fboxrule\vskip-\baselineskip
+	    % horizontale Position korrigieren
+	    \hspace{-\fboxsep}\hspace{-\fboxrule}%
+	    \begin{tabularx}{\textwidth}{|>{\bfseries\Large}C{7cm}|X|X|}                                                       
+	\hline
+	\vspace{0em}\includegraphics[scale=0.5]{logo_RHS.pdf} & Name: & Datum: \\
+	\hline
+	
+	\end{tabularx}
+	    %\makebox[\layerwidth][l]{%
+	    %  \fbox{\rule{0pt}{\layerheight}\rule{\layerwidth}{0pt}}% Rahmen
+	    %}%
+	  }
+	]{frame}
+	\AddLayersToPageStyle{@everystyle@}{frame}
+\fi
+
+\ifdefined\BEAMER
+	\documentclass{beamer}
+	\usepackage[ngerman]{babel}
+	\usepackage[utf8]{inputenc}
+	\usepackage{siunitx}
+	\usepackage{graphicx}
+	\usepackage{pgfplots}
+	\usepackage{pgfplotstable}
+	\usepackage{svg}
+	\sisetup{locale = DE,
+	per-mode=fraction}
+	% Lade Beamer Stile
+	\usepackage{beamerthemesplit}
+	\usepackage{tcolorbox}
+	\usetheme{Rochester}
+	\usecolortheme{crane}
+	\usetikzlibrary{arrows,patterns,positioning}
+	\usepackage{varwidth}
+	\usepackage{pst-pdf}
+\fi
+
+\title{Ermittlung der Wärmekapazität von Wasser}
+\subtitle{Wärmelehre}
+\author{Heiko Schröter}
+\date{\today}
+\titlegraphic{\includegraphics[scale=0.6]{logo_RHS.pdf}}
+\setbeamertemplate{enumerate item}{\alph{enumi})}
+\newtheorem{satz}{Satz}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\frame
+{
+  \frametitle{Wie viel Energie benötigt man, um $\SI{1}{\kilogram} $ Wasser um $\SI{1}{\celsius} $ zu erwärmen?}
+
+\textbf{Versuchsdurchführung:}\\
+Wir füllen in einen Wasserkocher $\SI{1}{\liter}$ Leitungswasser. Im Wasserkocher wird ein elektronischer Thermofühler angebracht. Nun erhitzen wir das Wasser bis zum Siedepunkt. Während dem Erhitzen zeichnen wir die Temperatur-Zeit-Kurve auf.\\
+\begin{figure}
+\textbf{Versuchsbeobachtung:}\\
+\begin{tabular}{|c|p{6.5cm}|}
+\hline 
+\rule[-1ex]{0pt}{2.5ex} Anfangstemperatur & $\vartheta_1=$ \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} Endtemperatur & $\vartheta_2=$ \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} Zeit bei $\SI{20}{\celsius} $ & $t_{\SI{20}{\celsius}}=$ \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} Zeit bei $\SI{70}{\celsius} $ & $t_{\SI{70}{\celsius}}=$ \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} Masse in $\si{\kilogram}$ & $m=$ \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} Leistung in $\si{\watt}$ & $P=$ \\ 
+\hline 
+\end{tabular}
+\end{figure}
+}
+
+\frame
+{
+  \frametitle{Temperaturkurve}
+\begin{tikzpicture}
+\begin{axis}[
+	xmin = 0, xmax = 240,
+	ymin = 0, ymax = 100,  
+	width = \textwidth,
+	height = 0.65\textwidth,
+	xtick distance = 60,
+	ytick distance = 10,
+	grid = both,
+	minor tick num = 1,
+	major grid style = {lightgray},
+	minor grid style = {lightgray!25},
+	legend style={at={(0,1)}, anchor=north west},
+	title = Temperaturverlauf beim Erhitzen von Wasser,
+	xlabel = Zeit in s,
+	ylabel = Temperatur in °C,
+]
+
+% plot data line code
+\addplot[teal, dotted, very thick] table[x = t, y = T] {wasser_4.dat};
+
+% Linear regression
+\addplot[red]
+	table[
+	x = t,
+	y = {create col/linear regression={y=T}}
+] {wasser_4.dat};
+
+\addplot[red, only marks] 
+	plot[error bars/.cd,
+	y dir=minus,y fixed relative=1,
+	x dir=minus,x fixed relative=1,
+	error mark=none,
+	error bar style={dashed, thick }]
+coordinates
+	{(19.59,20) (138.64,70)};
+	\coordinate (A) at ({axis cs:19.59,0}|-{rel axis cs:0,0});
+    \coordinate (B) at ({axis cs:138.64,0}|-{rel axis cs:0,0});
+
+% Add legend
+\addlegendentry{Messreihe}
+\addlegendentry{
+	$ T =\pgfmathprintnumber{\pgfplotstableregressiona} \cdot t
+	\pgfmathprintnumber[print sign]{\pgfplotstableregressionb}$
+};
+
+\end{axis}
+  \node[pin={above right:$t_1=19,59$}] at (A) {};
+  \node[pin={above right:$t_2=138,64$}] at (B) {};
+\end{tikzpicture}
+}
+
+\frame
+{
+  \frametitle{Wie viel Energie benötigt man, um $\SI{1}{\kilogram} $ Wasser um $\SI{1}{\celsius} $ zu erwärmen?}
+\textbf{Ergebnis:}\\
+Um einen Liter Wasser von $\SI{20}{\celsius} $ auf $\SI{70}{\celsius} $ zu erwärmen, benötigt man mit einem $\SI{2000}{\watt} $-Wasserkocher $t_{\SI{20}{\celsius}} - t_{\SI{70}{\celsius}}$ Sekunden.\\
+\vspace{0.3cm}
+\textbf{Folgerung:}\\
+	\begin{satz}[]
+		{$ Leistung = \dfrac{Energie}{Zeit}\Rightarrow P\approx\dfrac{Q}{t}$}
+	\end{satz}
+Wie kann man die notwendige Energie berechnen?
+  \begin{align*}
+	Q&=P \cdot t\\
+	&=\SI{2000}{\watt} \cdot \SI{119,05}{\second}\\
+	&\approx \SI{238.1}{\kilo\joule}
+  \end{align*}
+}
+
+\frame
+{
+  \frametitle{Wie viel Energie benötigt man, um $\SI{1}{\kilogram} $ Wasser um $\SI{1}{\celsius} $ zu erwärmen?}
+
+Um $\SI{1}{\kilogram} $ Wasser um $\SI{50}{\celsius} $ zu erhitzen benötigt man eine Energie von $\SI{238.1}{\kilo\joule}$. \\
+\vspace{0.3cm}
+Um $\SI{1}{\kilogram} $ Wasser um $\SI{1}{\celsius} (\SI{1}{\kelvin}) $ zu erwärmen benötigt man eine Energie von $\SI{4.762}{\kilo\joule}$.
+	\begin{alertblock}{Beachte}
+		Der Wirkungsgrad eines Wasserkochers liegt bei ca. $\SI{88}{\%}$. $\Rightarrow \SI{4.762}{\kilo\joule}\cdot\SI{88}{\%}=\SI{4.19}{\kilo\joule} $
+	\end{alertblock}
+
+}
+
+\end{document}
